@@ -10,6 +10,10 @@ This application allows you to search for and download images from Bing. It prov
 - **Image Details:** View detailed information about each image, including the source, size, and date.
 - **Command-Line Interface (CLI):** A simple CLI for searching and downloading images from the command line.
 
+## Screenshot
+
+![screenshot](screenshot.png)
+
 ## How to Run
 
 ### GUI
