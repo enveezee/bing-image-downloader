@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Default to GUI if no arguments are provided
+if [ $# -eq 0 ]; then
+    python3 -m bing_image_downloader.gui --debug
+    exit 0
+fi
+
+# Check for --debug flag
+DEBUG_FLAG=""
+if [[ " $@ " =~ " --debug " ]]; then
+    DEBUG_FLAG="--debug"
+fi
+
+# Check for --cli flag
+if [[ " $@ " =~ " --cli " ]]; then
+    # Remove --cli and --debug from the arguments
+    ARGS=$(echo "$@" | sed -e 's/--cli//g' -e 's/--debug//g')
+    python3 -m bing_image_downloader.cli $ARGS $DEBUG_FLAG
+else
+    python3 -m bing_image_downloader.gui $DEBUG_FLAG
+fi
